@@ -1,0 +1,30 @@
+%Document class
+\documentclass{article}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\input{spanishAlgorithmic} % mi archivo de traducción
+
+%Document content
+\begin{document}
+
+\begin{algorithm}
+\begin{algorithmic}[1]
+\REQUIRE Numero de elementos $n$.
+\ENSURE \TRUE si la suma es par y \FALSE si no.
+\STATE $i \leftarrow 0$.
+\STATE $sum \leftarrow 0$.
+\WHILE {$i < n$}
+\STATE $sum \leftarrow sum + i$.
+\ENDWHILE
+\IF{esPar($sum$)}
+\RETURN \TRUE
+\ELSE
+\RETURN \FALSE
+\ENDIF
+\end{algorithmic}
+\caption{Algoritmo de prueba}
+\label{alg:algoritmo}
+\end{algorithm}
+
+\end{document}

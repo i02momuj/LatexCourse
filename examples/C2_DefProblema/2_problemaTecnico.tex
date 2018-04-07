@@ -1,0 +1,84 @@
+\section{Identificación del problema técnico}
+\label{sec:ProblemaTecnico}
+
+%------------------------------------------------------------------------- 
+
+Una vez identificado el problema real, pasamos a la definición del problema técnico. Para ello usaremos una técnica llamada PDS (\textit{Product Design Specification}), con la que se responderá a un conjunto de preguntas básicas.
+
+\subsection{Funcionamiento}
+Con la ejecución del algoritmo se debe obtener un clasificador \textit{ensemble} capaz de resolver problemas de clasificación multi-etiqueta. Los clasificadores base del  \textit{ensemble} se obtendrán mediante el proceso generacional del algoritmo evolutivo. Finalmente, se obtendrá un conjunto de métricas de rendimiento, resultado de evaluar el modelo final sobre un conjunto de \textit{test}.
+
+Los parámetros del algoritmo evolutivo, tales como número de individuos o probabilidades de aplicación de los operadores genéticos, al igual que los conjuntos de datos a usar, vendrán determinados mediante un fichero de configuración.
+
+\subsection{Entorno}
+El entorno de nuestro proyecto lo debemos de enfocar desde diferentes puntos de vista, como son en nuestro caso el entorno de programación, el entorno software y el entorno de usuario.
+
+\begin{itemize}
+	\item Entorno de programación: la implementación del algoritmo se realizará en Java en su totalidad, debido principalmente a que, en la medida de lo posible se hará uso de librerías tanto para algoritmos evolutivos como para clasificación multi-etiqueta y la práctica totalidad están implementadas en Java. Para ello se usará el entorno de desarrollo Eclipse, en su versión \textit{Kepler}.
+	\item Entorno software: para la ejecución del algoritmo será necesario tener instalado correctamente el JRE de Java para la ejecución de programas en este lenguaje. Dado que Java es multiplataforma, no habrá restricción de sistema operativo.
+	\item Entorno de usuario: el algoritmo se ejecutará con los parámetros que se definan en un fichero de configuración, que será lo único que deba modificar el usuario. El fichero de configuración incluirá los parámetros mediante uso de etiquetas, y será bastante intuitivo. El usuario deberá comprender qué significa cada uno de los parámetros y deberá ser capaz de interpretar las medidas de evaluación que se obtengan al final.
+\end{itemize}
+
+\subsection{Vida esperada}
+La vida esperada para un proyecto de este tipo es difícil de predecir, ya que dependerá en gran parte del rumbo que tomen los trabajos de investigación en el tiempo, y la evolución de los mismos en esta temática. Aun así, este proyecto podría servir de punto de partida para próximas actualizaciones o próximas mejoras y optimizaciones del mismo, así como puede ser fruto de comparaciones con otros algoritmos similares.
+
+\subsection{Ciclo de mantenimiento}
+Hay varios casos principales en los que sea necesario realizar un mantenimiento del algoritmo implementado:
+
+\begin{itemize}
+	\item Si se descubren errores que no se habían detectado durante la implementación y pruebas del algoritmo, necesitarán ser corregidos para continuar con el buen funcionamiento del mismo.
+	\item Si las librerías en las que se basa la implementación del algoritmo sufren alguna modificación o actualización, es posible que se necesiten modificar algunos aspectos si queremos introducir la última versión de dicha librería.
+	\item Si se quiere realizar alguna mejora en el algoritmo, para optimizar o ampliar alguna de sus funcionalidades.
+\end{itemize}
+
+\subsection{Competencia}
+Existen librerías con algoritmos de clasificación multi-etiqueta, como Mulan \cite{WebMulan} y Meka \cite{WebMeka},  que ayudan a resolver problemas de clasificación multi-etiqueta con un conjunto variado de algoritmos ya implementados. Pero tal y como está planteado nuestro problema no existe un software que realice lo mismo, es decir, que realice la optimización de modelos \textit{ensemble} mediante algoritmos evolutivos.
+
+\subsection{Aspecto externo}
+El sistema no poseerá interfaz gráfica, sino que se podrá ejecutar mediante línea de comandos. El uso del mismo será fácil ya que solo necesitará que se le pase un fichero de configuración, que contendrá todos los parámetros necesarios para la ejecución del algoritmo.
+
+\subsection{Estandarización}
+En cuanto a estandarización, al desarrollar nuestro software en Java, se usará un estándar de codificación en Java, que permitirá una mayor interpretabilidad del código escrito. Algunos de los aspectos más importantes y extendidos de este estándar son:
+\begin{itemize}
+	\item Los nombres de los paquetes deberán ir siempre en letra minúscula, para no confundir con el nombre de las clases.
+	\item Los nombres de las clases deben empezar siempre por letra mayúscula, y si se compone de varias palabras, el comienzo de cada una de ellas irá también en mayúscula.
+	\item Los nombres de las clases deben ser simples y descriptivos.
+	\item Los métodos deben describir su funcionamiento mediante el uso de un verbo, empezar su nombre por minúscula, y si está compuesto por varias palabras, la primera letra de cada una de ellas será mayúscula.
+	\item Las variables se escribirán en minúsculas, excepto si son compuestas, que la primera letra de cada palabra será en mayúscula. Nunca podrán empezar por ``\$'' o ``\_''.
+\end{itemize}
+
+\subsection{Calidad y fiabilidad}
+La calidad y la fiabilidad son dos conceptos muy importantes a la hora de un desarrollo software. La calidad se refiere a que no se produzcan errores inesperados durante la ejecución del software provocando su interrupción, y la fiabilidad de un software reside en que realice todas sus funciones y operaciones de manera correcta.
+
+Tanto durante la implementación de partes del software, como una vez finalizado, se realizarán una serie de pruebas para comprobar su correcto funcionamiento. Con ello se pretende ofrecer al cliente un software de calidad que funcione de manera fiable, siempre que se realice un uso correcto del mismo.
+
+\subsection{Programa de tareas}
+Las tareas de que constará el \textit{Trabajo Fin de Grado} se han distribuido temporalmente en 15 semanas, en una planificación con 20 horas de trabajo por semana. Estas tareas son:
+
+\begin{itemize}
+	\item Semanas 1-2: estudio e investigación por parte del alumno de conceptos sobre clasificación multi-etiqueta y modelos \textit{ensemble} para clasificación, así como del estudio y comprensión de diferentes librerías de algoritmos evolutivos y clasificación multi-etiqueta.
+	\item Semana 3: determinar y analizar el alcance de la investigación junto con los directores del proyecto, definiendo lo que se pretende conseguir, recogiendo y analizando los requisitos del software.
+	\item Semanas 4-5: teniendo como base los requerimientos obtenidos, se realizará el diseño del algoritmo, con total descripción, para luego realizar la implementación del mismo.
+	\item Semanas 6-9: se procede a la implementación del algoritmo tomando como base el diseño anterior. En esta fase también se realizarán pruebas aisladas para ir comprobando el funcionamiento del algoritmo conforme lo vamos avanzando. Al finalizar la implementación, se realizan un conjunto de pruebas para comprobar el funcionamiento del algoritmo completo, y asegurarnos de que realiza sus funciones de manera satisfactoria.
+	\item Semanas 10-11: diseño de los experimentos a los que se someterá nuestro algoritmo con el fin de comparar su rendimiento con el de otros ya existentes en clasificación multi-etiqueta.
+	\item Semanas 12-14: análisis de los resultados obtenidos en los experimentos. También se incluye aquí el mantenimiento, ya que el sistema se pone en funcionamiento y pueden aparecer errores no detectados anteriormente y que haya que corregir.
+	\item Semana 15: revisión del documento del proyecto, que se ha ido construyendo durante todas las fases del desarrollo, donde cada capítulo será una etapa.
+\end{itemize}
+
+\subsection{Pruebas}
+Dentro de las pruebas a las que se someterá nuestro software, podemos diferenciar entre dos tipos: pruebas de funcionamiento y pruebas de rendimiento:
+
+\begin{itemize}
+	\item Pruebas de funcionamiento: se realizarán mayoritariamente una vez el software se considere totalmente implementado, aunque durante la fase de implementación también se harán pruebas aisladas para ir comprobando en cada momento que las partes que vamos desarrollando funcionan de manera satisfactoria. Distinguimos aquí a su vez entre dos tipos principales:
+	\begin{itemize}
+		\item Pruebas de caja blanca: comprobar que los valores de las variables de nuestro algoritmo son los adecuados, teniendo en cuenta los distintos flujos de ejecución.
+		\item Pruebas de caja negra: realizar pruebas sobre el algoritmo con problemas de los cuales conocemos sus resultados, y comprobar que los resultados de nuestro algoritmo sean correctos y se acerquen a los valores conocidos.
+	\end{itemize}
+	\item Pruebas de rendimiento o de experimentación: una vez seguros de que nuestro sistema funciona de manera correcta, ejecutaremos una serie de experimentos sobre problemas reales, obteniendo los resultados de nuestro algoritmo para poder ver cuál es su rendimiento y hacer una posterior comparación con otros métodos.
+\end{itemize}
+
+\subsection{Seguridad}
+La seguridad de nuestro sistema consiste básicamente en que no realice operaciones más allá de las necesarias para su funcionalidad. En cuanto a la privacidad de los datos, no tendremos que tomar ninguna medida, ya que trabajamos con datos que son públicos y en ningún caso confidenciales.
+
+
+% ----------------------------------------------------------------------

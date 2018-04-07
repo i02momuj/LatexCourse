@@ -1,0 +1,60 @@
+% content in this file will be fed into the main document
+
+%: ----------------------- introduction file header -----------------------
+
+
+\chapter{Introducción}
+\label{cha:Introduccion}
+
+
+%------------------------------------------------------------------------- 
+
+La clasificación es una tarea de la minería de datos, en la cual, dado un conjunto de patrones de entrenamiento cuya clase es conocida y pertenece a un conjunto de clases previamente definidas, se pretende predecir para cada nuevo patrón de clase desconocida, una de las clases disponibles basándose en los atributos del conjunto de datos.
+
+Un ejemplo clásico de clasificación es el del conjunto de datos Iris \cite{Iris}. En este problema, dependiendo del tamaño de los pétalos y sépalos de las plantas Iris, se clasifica en alguno de sus tres tipos: Setosa, Versicolor o Virgínica. Cada patrón únicamente se encuadra dentro de una clase, pues una planta Iris sólo puede pertenecer a uno de sus tipos.
+
+Por tanto, esta definición clásica de clasificación presupone la restricción de una sola clase por patrón, pero cada vez aparecen más problemas, tales como categorización de textos y sonidos, clasificación de imágenes, diagnóstico médico, o clasificación de las funciones de las proteínas o genes, donde un patrón puede tener varias etiquetas asociadas simultáneamente. Por ejemplo, en clasificación de imágenes, una imagen en la que se ven dos animales distintos, como la que se puede observar más abajo, puede ser asociada a las categorías ``león'' y ``cebra'' simultáneamente. Estos problemas son llamados multi-etiqueta o \textit{multi-label}, en comparación con los problemas de clasificación clásicos, también llamados \textit{single-label}. En este mismo caso, con la definición de clasificación clásica o \textit{single-label}, la imagen sólo se podría asignar a la clase ``leon'' o a ``cebra'', pero no a ambas, por lo que no la salida del clasificador sería incompleta.
+
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=9cm]{1_introduccion/figures/PNG/leon_cebra}
+%\end{figure}
+
+Solucionar un problema multi-etiqueta es mucho más difícil y costoso, ya que las distintas combinaciones de etiquetas posibles crecen de manera exponencial, y los modelos resultantes son mucho más complejos.
+
+Por ello, el paradigma de aprendizaje multi-etiqueta ha ido creciendo en los últimos años como un tipo de aprendizaje supervisado, convirtiéndose en un tema muy candente y sobre el que se realizan gran cantidad de trabajos de investigación.
+
+Una de las técnicas para abordar problemas de clasificación (\textit{single} o \textit{multi-label}) son los multi-clasificadores (\textit{ensembles}), que combinan varios clasificadores base para obtener una decisión final más precisa que la de los clasificadores que lo forman. Una opción común de obtener esta decisión es hacerlo por votación, es decir, la opción más votada o mayoritaria de entre los distintos clasificadores base es la escogida como decisión final. Los clasificadores base del \textit{ensemble} han de ser suficientemente diversos, ya sea por la tecnología empleada, por los datos de entrenamiento, o por los parámetros de los propios algoritmos.
+
+El uso de \textit{ensembles} permite evitar fallos individuales de un clasificador al predecir la clase o etiqueta de un patrón. Para que la predicción sobre un patrón sea errónea en la decisión final, ha debido de ser errónea en varios de los clasificadores base, y no en uno aislado. Esto nos permite elevar generalmente el nivel de acierto de nuestro clasificador.
+
+Por otro lado, los algoritmos evolutivos son métodos de optimización y búsqueda de soluciones. Para ello se tienen un conjunto de individuos que representan posibles soluciones, que se mezclan y compiten entre si, de manera que las más aptas prevalecen a lo largo del tiempo, evolucionando hacia mejores soluciones. Este tipo de algoritmos se suelen usar en casos en los que no es posible encontrar la solución óptima al problema en un tiempo razonable.
+
+Las fases o pasos que sigue un algoritmo evolutivo clásico están descritas en el Algoritmo \ref{alg:fasesEvolutivo}:
+
+\begin{algorithm}[H]
+\begin{algorithmic}[1]
+\STATE{Generar una población inicial aleatorio de \textit{N} individuos}
+\STATE{Evaluar los individuos de la población inicial}
+\FOR {\textit{G} generaciones}
+    \STATE{Seleccionar \textit{k} individuos de la población}
+    \STATE{Aplicar los operadores genéticos a estos \textit{k} individuos para obtener la descendencia}
+    \STATE{Evaluar los nuevos individuos}
+    \STATE{Seleccionar la nueva población y reemplazarla por la anterior}
+\ENDFOR
+\end{algorithmic}
+\caption{Fases de un algoritmo evolutivo}
+\label{alg:fasesEvolutivo}
+\end{algorithm}
+
+El algoritmo evolutivo parte de un conjunto de individuos, escoge un subconjunto de ellos y los modifica mediante los operadores genéticos de cruce y mutación. De entre los individuos modificados escogemos generalmente los mejores, que serán los que pasarán a la siguiente generación. De este modo, con el paso de las generaciones se van obteniendo individuos mejores que los iniciales, es decir, se optimizan las posibles soluciones para un problema.
+
+Como resultado final tendremos una población de soluciones, suficientemente buenas, de entre las cuales nos interesaría quedarnos con la mejor de todas, o con un subconjunto de ellas, dependiendo del problema específico en cada caso.
+
+Aunque se han desarrollado ya modelos de clasificación multi-etiqueta basados en \textit{ensembles}, como RA\textit{k}EL \cite{RAKEL}, EPS \cite{EPS} o ECC \cite{ECC} entre otros, no se había abordado la optimización de los clasificadores base que lo componen mediante algoritmos evolutivos.
+
+Por tanto, lo que se pretende hacer en este \textit{Trabajo Fin de Grado} es unir todos estos conceptos para conseguir un multi-clasificador para clasificación multi-etiqueta, en el cual los clasificadores base serán seleccionados mediante el uso de algoritmos evolutivos. Además, una vez desarrollado dicho modelo, se diseñará e implementará un completo conjunto de experimentos para probar su rendimiento comparándolo con algoritmos de referencia en clasificación multi-etiqueta, y con un amplio conjunto de \textit{datasets}.
+
+
+% ----------------------------------------------------------------------
+

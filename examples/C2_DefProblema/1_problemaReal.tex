@@ -1,0 +1,12 @@
+\section{Identificación del problema real}
+\label{sec:ProblemaReal}
+
+%------------------------------------------------------------------------- 
+
+Como se ha comentado en la introducción, los modelos \textit{ensemble} son usualmente una manera muy buena de abordar un problema de clasificación, ya que reúne las decisiones de varios clasificadores y no de uno solo.
+
+Un problema claro de estos modelos es el tiempo computacional necesario para crear un \textit{ensemble}, dado que no debemos entrenar un solo clasificador, sino varios. Y más difícil aún es acertar con qué clasificadores base usar a la hora de crear el \textit{ensemble}, pues eso determinará el resultado final del clasificador y su funcionamiento. 
+
+Por esto, se pretende la creación de un algoritmo evolutivo mediante el cual se decida cuáles serán los clasificadores base de nuestro multi-clasificador, y realizar pruebas del \textit{ensemble} utilizando \textit{datasets} de referencia en el campo de la clasificación multi-etiqueta. Obviamente, como antes hemos mencionado el problema del tiempo computacional a la hora de crear un \textit{ensemble}, será necesario tenerlo presente en todo momento, para realizar una optimización en tiempo lo mayor posible.
+
+% ----------------------------------------------------------------------

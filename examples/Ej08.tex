@@ -1,0 +1,70 @@
+%Document class
+\documentclass{article}
+
+\usepackage{multirow}
+
+%Document content
+\begin{document}
+
+Tabla 1\\
+%Tabla 1
+\begin{tabular}{llcr}
+c11 & c12 & c13 & c14 \\
+c21 & c22 & c23 & c24 \\
+\end{tabular}
+
+-\\
+
+Tabla2\\
+%Tabla 2
+\begin{table}[htbp]
+  \begin{center}
+  \caption{Titulo de la tabla.}
+  \label{tabla:tab2}
+  \begin{tabular}{|l|rrr|}
+    \hline
+    h1 & h2 & h3 & h4 \\
+    \hline
+    c11 & c12 & c13 & c14 \\
+    c21 & c22 & c23 & c24 \\
+    \hline
+  \end{tabular}
+  \end{center}
+\end{table}
+
+Tabla3\\
+%Tabla 3
+\begin{table}[htbp]
+  \begin{center}
+  \caption{Titulo de la tabla.}
+  \label{tabla:tab3}
+  \begin{tabular}{|l|rrr|}
+    \hline
+    h1 & \multicolumn{3}{|c|}{Unidas} \\
+    \hline
+    c11 & c12 & c13 & c14 \\
+    c21 & c22 & c23 & c24 \\
+    \hline
+  \end{tabular}
+  \end{center}
+\end{table}
+
+Tabla4\\
+%Tabla 4
+\begin{table}[htbp]
+  \begin{center}
+  \caption{Titulo de la tabla.}
+  \label{tabla:tab4}
+  \begin{tabular}{|l|rrr|}
+    \hline
+    h1 & h2 & h3 & h4 \\
+    \hline
+    \multirow{2}{*}{Unidas} & c12 & c13 & c14 \\
+     & c22 & c23 & c24 \\
+    \hline
+  \end{tabular}
+  \end{center}
+\end{table}
+
+
+\end{document}

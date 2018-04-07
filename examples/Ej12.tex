@@ -1,0 +1,56 @@
+%Document class
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+\lstset{ 
+  frame=Ltb,
+  framerule=0pt,
+  aboveskip=0.5cm,
+  framextopmargin=3pt,
+  framexbottommargin=3pt,
+  framexleftmargin=0cm,
+  aboveskip=\bigskipamount,
+  belowskip=\bigskipamount,
+  framesep=0pt,
+  rulesep=.4pt,
+  backgroundcolor=\color{white},
+  rulesepcolor=\color{black},
+  %
+  stringstyle=\ttfamily,
+  showstringspaces = false,
+  basicstyle=\scriptsize\ttfamily,
+  keywordstyle=\bfseries,
+  %
+  numbers=left,
+  numbersep=5pt,
+  numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+  numberfirstline = false,
+  breaklines=true,
+  %
+  tabsize=1,
+  commentstyle=\color{ForestGreen},
+  keywordstyle=\color{blue},
+  stringstyle=\color{Mahogany},
+}
+
+\lstdefinestyle{R}
+{language=R,
+commentstyle=\color{ForestGreen},
+  keywordstyle=\color{blue},
+  stringstyle=\color{Mahogany},
+  xleftmargin=9pt,
+  xrightmargin=2pt,
+}
+
+%Document content
+\begin{document}
+
+\begin{figure}[ht]
+  \lstinputlisting[style=R]{DummyClassifier.R}
+  \caption{Example of RKEEL algorithm implementation}
+  \label{alg:DummyClassifier}
+\end{figure}
+
+\end{document}

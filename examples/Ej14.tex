@@ -1,0 +1,48 @@
+%DOCUMENTO PRINCIPAL
+
+%Document class
+\documentclass{report}
+
+%Paquetes y otros metadatos
+	%...
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{appendix}
+\usepackage{stmaryrd}
+\usepackage{bigstrut}
+\usepackage{amsmath,amsfonts}
+\usepackage{achemso}
+\usepackage[utf8]{inputenc}
+
+    
+%Document content
+\begin{document}
+
+%Portada
+\input{C0/Portada}
+\input{C0/Firma}
+\input{C0/Agradecimientos}
+
+\tableofcontents
+\listoffigures
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\listtablename}{Índice de tablas}
+\listoftables
+
+%Introduccion
+\input{C1_Introduccion/0_index}	
+
+%Definicion del problema
+\input{C2_DefProblema/0_index}
+\input{C2_DefProblema/1_problemaReal}
+\input{C2_DefProblema/2_problemaTecnico}
+
+%\input{Ej14_2}
+
+%\include{Ej14_2.tex}
+\end{document}
